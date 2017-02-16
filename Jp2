@@ -1,0 +1,83 @@
+
+
+
+
+//Javascript
+var curInv =[];
+var posInv =["Laser-Tool"];
+
+function lckrRoom(input) {
+if (input == 1) {
+	description = "<p>As you enter the locker room, you can see</p>" +
+	"<p> many lockers, each of which are unlocked due to the manual power</p>" +
+	"<p> reset which occured when you turned the power back on. </p>" +
+	"<br><p><a href='#' onclick='lckrOpen()'>Crack Open A Locker</a></p>" +
+	"<br><p>Or you could head back to the <a onclick='BRIDGEPLACEHOLDER()'>Bridge</a></p>";
+	
+
+
+var roomRan = document.getElementById('roomDesc');
+roomRan.innerHTML = description;
+
+
+
+}
+
+
+
+}
+function lckrOpen() {
+var tmpRan = Math.floor(Math.random() * 5);
+if(tmpRan == 0){
+	description = "<p>As you enter the locker room, you can see</p>" +
+	"<p> many lockers, each of which are unlocked due to the manual power</p>" +
+	"<p> reset which occured when you turned the power back on. </p>" +
+	"<br><p><a onclick='BRIDGEPLACEHOLDER()'>Bridge</a></p>";
+	description += "<p>You managed to get the laser tool!</p>"
+
+curInv.unshift(posInv[0]);
+document.getElementById('allInv').innerHTML = laserTool.menuCreate();
+console.log(curInv);
+
+var roomRan = document.getElementById('roomDesc');
+roomRan.innerHTML = description;
+
+}
+else{
+
+var roomRan = document.getElementById('roomDesc');
+roomRan.innerHTML += "<p>This locker had nothing inside of it.</p>"
+
+}
+}
+var laserTool = {
+	location:'locker',
+		menuCreate: function () {
+		menu = 
+			"<span id='laserLinkId' class='popup'>" +
+				"<a href='#' onclick='laserTool.menuDisplay()'>" +
+					"Laser-Tool" +
+				"</a>" +
+				"<span id='laserMenuId' class='popuptext'>" +
+					"<u onclick='laserTool.examine()'>" +
+						"Examine" +
+					"</u>";
+		
+		return(menu)
+		},
+		
+		menuDisplay: function () {
+		popup = document.getElementById('laserMenuId');
+		popup.style.visibility = 'visible';
+		},
+		examine: function () {
+		
+		document.getElementById('roomDesc').innerHTML += "<p>You examine the laser tool and" +
+		" realize that it's a laser tool.</p>"
+		
+		popup = document.getElementById('laserMenuId');
+		popup.style.visibility = 'hidden';
+		},
+
+
+}

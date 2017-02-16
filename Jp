@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Game Demo</title>
+
+<script src='main.js'></script>
+<style>
+.popup {
+    position: relative;
+    display: inline-block;
+    cursor: pointer;
+}
+
+.popuptext {
+    visibility: hidden;
+    background-color: #eee;
+    text-align: center;
+    border-radius: 6px;
+    padding-right: 8px;
+	padding-left: 8px;
+	line-height: 125%;
+    position: absolute;
+    z-index: 1;
+	top: 15px;
+}
+body{
+	background-color: black;
+}
+p{
+	color: white;
+	font-size: 20px;
+}
+</style>
+</head>
+<body>
+<div id='fullDiv' align='center'> 
+<p id='roomDesc'></p>
+
+
+<p id='allInv'></p>
+</div>
+<button onclick='lckrRoom(1)'>Test The Locker Room</button>
+
+</body>
+</html>
