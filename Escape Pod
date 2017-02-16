@@ -1,0 +1,38 @@
+/* ESCAPE POD */
+function enterLightPod() {
+console.log('enterLightPod')
+	var description =
+		"<p>The escape pods engine is not functioning, " +
+		"there might be a way to " +
+		"<a herf'#' onclick='fixPod()'>fix</a>" +
+		" it...</p>";
+}
+
+/* FIX POD */
+function fixPod() {
+console.log('fixPod')
+	if (laser.location == 'body') {
+		endGame();
+	}
+	else {
+		enterRejection();
+	}
+}
+
+/* REJECTED */
+function enterRejection() {
+console.log('enterRejection')
+	var description =
+		"<p>You need a tool it might be on the" +
+		"<a herf'#' onclick='enterBridge()'>bridge</a>." +
+		"</p>";
+}
+
+/* END GAME */
+function endGame() {
+console.log('endGame')
+	var description =
+		"<p>The door slamed shut behind you, the pod " +
+		"has started to shake...<br>" +
+		"You were lanched back to earth.</p>";
+}
